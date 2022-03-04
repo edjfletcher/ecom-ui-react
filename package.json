@@ -1,5 +1,8 @@
 {
-  "name": "ecom-ui-react",
+  "name": "@edjfletcher/ecom-ui-react",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/edjfletcher"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "dist/cjs/index.js",
