@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+$color-primary: #18181d;
+$color-primary-dark: darken($color-primary, 5%);
+$color-secondary: #435c50;
+$color-secondary-shades: (
+    'light': color.scale($color-secondary, 10%)
+);
+$color-secondary-dark: darken($color-secondary, 5%);
+$color-warning: #db4b68;
+$color-white: #ffffff;
+$color-grey: #f5f5f5;
+
+$theme-colors: (
+        'primary': $color-primary,
+        'secondary': $color-secondary,
+);
+$colors-dark: (
+        'primary': $color-primary-dark,
+        'secondary': $color-secondary-dark,
+);

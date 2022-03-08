@@ -1,0 +1,52 @@
+@use 'variables';
+
+@mixin padding($size: 'sm') {
+  padding: map-get(variables.$paddings-vertical, $size) map-get(variables.$paddings-horizontal, $size);
+}
+
+@mixin apply-margin($size: 'sm') {
+  margin: map-get(variables.$paddings-vertical, $size) map-get(variables.$paddings-horizontal, $size);
+}
+
+@mixin page-size($size: 'sm') {
+  $width: map-get(variables.$screen-sizes, $size);
+  $width: map-get(variables.$screen-sizes, 'sm') !default;
+
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin list($isVertical: false) {
+  display: flex;
+  @if $isVertical {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+
+  &>* {
+    flex: 0 1 auto;
+  }
+  &>.key {
+    flex-grow: 1;
+  }
+}
+
+@mixin variants($baseName, $withHover: false) {
+  @each $type, $color in variables.$theme-colors {
+    &.#{$baseName}-#{$type} {
+      background-color: $color;
+      color: variables.$color-white;
+      @if $withHover {
+        &:hover {
+          background-color: map-get(variables.$colors-dark, $type);
+        }
+      }
+    }
+  }
+}
