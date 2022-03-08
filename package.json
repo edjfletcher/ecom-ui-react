@@ -3,13 +3,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/edjfletcher"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "types": "dist/index.d.ts",
   "scripts": {
