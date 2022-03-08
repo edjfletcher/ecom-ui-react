@@ -1,0 +1,25 @@
+@use '../../styles/mixins';
+@use '../../styles/variables';
+
+.button {
+  @include mixins.variants('button', true);
+  @include mixins.padding('sm');
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @each $size in variables.$sizes {
+    &.button-#{$size} {
+      @include mixins.padding($size);
+    }
+  }
+
+  &.button-display-block {
+    display: block;
+  }
+
+  &.button-disabled {
+    opacity: 0.6;
+  }
+}

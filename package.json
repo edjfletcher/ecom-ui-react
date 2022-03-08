@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/edjfletcher"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,7 +18,11 @@
   "license": "ISC",
   "dependencies": {
     "@types/react": "^17.0.39",
+    "postcss": "^8.4.8",
     "react": "^17.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.49.9",
     "typescript": "^4.6.2"
   },
   "devDependencies": {
@@ -26,7 +30,9 @@
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
     "rollup": "^2.69.0",
-    "rollup-plugin-dts": "^4.2.0",
     "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }
